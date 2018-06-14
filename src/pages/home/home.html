@@ -1,14 +1,32 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
+	<ion-navbar>
+		<ion-title>
+			Skipper Calculator
+		</ion-title>
+	</ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+	<ion-item>
+		<ion-label color="primary" fixed>Nº aulas</ion-label>
+		<ion-input [(ngModel)]="numClasses" type="number" placeholder=""></ion-input>
+	</ion-item>
+	<ion-item>
+		<ion-label color="primary" fixed>Faltas</ion-label>
+		<ion-input [(ngModel)]="skippedClasses" type="number" placeholder=""></ion-input>
+	</ion-item>
+	<ion-item>
+		<ion-label color="primary" fixed>% Mínima</ion-label>
+		<ion-input [(ngModel)]="minPercentage" type="number" placeholder=""></ion-input>
+	</ion-item>
+	<br>
+	<button ion-button block (click)="calculate()">Calcular</button>
+
+	<div class="results">
+		<p>Sua porcentagem de faltas é: </p>
+		<h1>{{myPercent}}%</h1>
+
+		<p>Você pode faltar: </p>
+		<h1>{{myPossibleSkips}} aulas</h1>
+	</div>
 </ion-content>
